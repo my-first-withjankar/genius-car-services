@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate()
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const handleForm = event => {
@@ -9,6 +11,9 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         console.log(email, password);
+    }
+    const loginNavigate = () => {
+        navigate('/register')
     }
     return (
         <div className='container w-50 mx-auto mt-5'>
@@ -33,6 +38,7 @@ const Login = () => {
                     Submit
                 </Button>
             </Form>
+            <p className='mt-2 '><small>New to Genius car? <span onClick={loginNavigate} className='text-primary'>Register here </span></small></p>
         </div>
     );
 };
