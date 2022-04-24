@@ -7,6 +7,7 @@ import Loading from '../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -80,6 +81,7 @@ const Login = () => {
             <p className=''><small>New to Genius car? <span onClick={loginNavigate} className='text-primary'>Register here </span></small></p>
             <p className=''><small>Forget password? <span onClick={resetPassword} className='text-primary'>Reset here </span></small></p>
             <SocialLogin></SocialLogin>
+            <PageTitle title='login'></PageTitle>
             <ToastContainer />
         </div>
     );

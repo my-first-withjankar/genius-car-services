@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './pages/About/About';
+import AddService from './pages/AddService/AddService';
 import CheckOut from './pages/CheckOut/CheckOut';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login';
+import ManageService from './pages/ManageService/ManageService';
 import NotFound from './pages/NotFound/NotFound';
 import Register from './pages/Register/Register';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
@@ -22,13 +24,25 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/checkout' element={<RequireAuth>
-          <CheckOut> </CheckOut>
-        </RequireAuth>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <CheckOut> </CheckOut>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manage' element={
+          <RequireAuth>
+            <ManageService></ManageService>
+          </RequireAuth>
+        }></Route>
+        <Route path='/adduser' element=
+          {<RequireAuth>
+            <AddService></AddService>
+          </RequireAuth>}
+        ></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
-      </Routes>
+      </Routes >
       <Footer></Footer>
-    </div>
+    </div >
   );
 }
 
